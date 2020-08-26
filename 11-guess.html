@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+   <input type="text" id="numberInput">
+    <button id="button">Gæt et tal</button>
+
+    <script>
+
+
+        const numberInput = document.querySelector("#numberInput");
+        const button = document.querySelector("#button");
+
+        let guesses = 0;
+        let inputValue = numberInput.value;
+        let randomNumber = Math.floor(Math.random() * 21);
+
+        console.log("Gæt et tal mellem 0 og 20!");
+
+        button.addEventListener("click", () => {
+            inputValue = numberInput.value;
+            guesses++;
+
+            if (randomNumber == inputValue) {
+                console.log(`Du har gættet rigtigt! Tallet er ${randomNumber}. Du brugte ${guesses} antal gæt. Vil du prøve igen med et nyt tal?`);
+            } else if (randomNumber < inputValue) {
+                console.log ("Du har gættet for højt, gæt igen!");
+            } else {
+                console.log("Du har gættet for lavt, gæt igen!");
+            }
+        });
+
+    </script>
+</body>
+</html>
