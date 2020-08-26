@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <input type="text" placeholder="Dude" id="dude">
+    <input type="text" placeholder="Dudette" id="dudette">
+    <button id="button">Er I kompatible på alder? ;)</button>
+
+    <script>
+        const dudeInput = document.querySelector("#dude");
+        const dudetteInput = document.querySelector("#dudette");
+        const button = document.querySelector("#button");
+
+        button.addEventListener("click", () => {
+            let dudeAge = dudeInput.value;
+            let dudetteAge = dudetteInput.value;
+            console.log(`Dudes alder: ${dudeAge}`);
+            console.log(`Dudettes alder: ${dudetteAge}`);
+
+            fuckParametre(dudeAge, dudetteAge);
+        });
+
+        function fuckParametre(dudeAge, dudetteAge) {
+            let dudeMinimumAge = dudeAge / 2 + 7;
+            let dudetteMinimumAge = dudetteAge / 2 + 7;
+
+            console.log(`Dudes minimum age: ${dudeMinimumAge}`);
+            console.log(`Dudettes minimum age: ${dudetteMinimumAge}`);
+            if (dudeAge >= 15 && dudetteAge >= 15) {
+                if (dudeMinimumAge > dudetteAge || dudetteMinimumAge > dudeAge) {
+                    console.log("I må ikke date, en af jer er for ung!");
+                } else {
+                    console.log("I må gerne date, slå jer løs ;) ;^) ;)) ;))))))");
+                }
+            } else {
+                console.log("Pas på dude eller dudette, dette ligner pædofili. Man skal være over 15 for at date!");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
