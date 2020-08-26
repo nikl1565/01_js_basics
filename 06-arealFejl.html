@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 5 - Arealer og funktioner</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <input type="text" id="length">
+    <input type="text" id="width">
+    <button id="button">Udregn areal</button>
+
+
+    <script>
+
+    const lengthInput = document.querySelector("#length");
+    const widthInput = document.querySelector("#width");
+    const button = document.querySelector("#button");
+
+    button.addEventListener("click", () => {
+
+        let getLength = lengthInput.value;
+        let getWidth = widthInput.value;
+        console.log(getLength);
+        console.log(getWidth);
+
+        if (isNaN(getLength) || isNaN(getWidth)) {
+            console.log("Du har indtastet en forkert værdi, prøv igen!");
+        } else {
+            console.log(area(getLength, getWidth));
+        }
+
+
+    });
+
+    function area(length, width) {
+        return length * width;
+    }
+
+    </script>
+</body>
+</html>
